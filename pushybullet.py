@@ -148,8 +148,8 @@ class Session(object):
 
         if params:
             _params = params.copy()
-            for k in _params.keys():
-                if _params[k] is None:
+            for k in params.keys():
+                if params[k] is None:
                     del _params[k]
 
             _query = urllib.urlencode(_params)
