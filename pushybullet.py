@@ -3,9 +3,11 @@
 try:
     from StringIO import StringIO
     from urlparse import urlparse
+    import httplib
 except ModuleNotFoundError:
     from io import StringIO
     from urllib.parse import urlparse
+    import http.client as httplib
 import os
 import datetime
 import time
@@ -13,7 +15,6 @@ import base64
 import binascii
 
 import urllib
-import httplib
 import random
 
 try:
