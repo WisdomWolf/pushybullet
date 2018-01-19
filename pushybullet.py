@@ -1,6 +1,9 @@
 # -*- encoding: utf-8 -*-
 
-from StringIO import StringIO
+try:
+    from StringIO import StringIO
+except ModuleNotFoundError:
+    from io import StringIO
 import os
 import datetime
 import time
