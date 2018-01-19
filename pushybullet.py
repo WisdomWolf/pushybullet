@@ -4,17 +4,18 @@ try:
     from StringIO import StringIO
     from urlparse import urlparse
     import httplib
+    import urllib
 except ModuleNotFoundError:
     from io import StringIO
     from urllib.parse import urlparse
     import http.client as httplib
+    import urllib.parse as urllib
 import os
 import datetime
 import time
 import base64
 import binascii
 
-import urllib
 import random
 
 try:
