@@ -2,8 +2,10 @@
 
 try:
     from StringIO import StringIO
+    from urlparse import urlparse
 except ModuleNotFoundError:
     from io import StringIO
+    from urllib.parse import urlparse
 import os
 import datetime
 import time
@@ -11,7 +13,6 @@ import base64
 import binascii
 
 import urllib
-import urlparse
 import httplib
 import random
 
@@ -139,7 +140,7 @@ class Session(object):
             raise RuntimeError('%s %s' % (status, self.__resp.reason))
 
     def _request(self, method, url, params=None, data=None, files=None, auth=None, headers=None):
-        _url = urlparse.urlparse(url)
+        _url = urlparse(url)
 
         conn = {'http': httplib.HTTPConnection,
                 'https': httplib.HTTPSConnection}[_url.scheme](_url.hostname, _url.port)
